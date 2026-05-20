@@ -6,7 +6,7 @@ function randomInteger(min, max) {
 
 //REDIRECT
 function redirectToPage(url) {
-    window.location.href = "/thu-p5/index.html";
+    window.location.href = "../thu-p5/index.html";
 }
 
 
