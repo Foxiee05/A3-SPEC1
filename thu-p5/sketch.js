@@ -2540,7 +2540,7 @@ function handleNavigationButtonClick() {
       backButtonY
     )
   ) {
-    redirectToPage("/chik-p5/index.html");
+    redirectToPage("../chik-p5/index.html");
     return true;
   }
 
@@ -2551,7 +2551,7 @@ function handleNavigationButtonClick() {
       nextButtonY
     )
   ) {
-    redirectToPage("/ceo-p5/index.html");
+    redirectToPage("../ceo-p5/index.html");
     return true;
   }
 

@@ -53,7 +53,7 @@ function mousePressed() {
     mouseY >= backY && 
     mouseY <= backY + backH
   ) {
-    redirectToPage("/thu-p5/index.html");
+    redirectToPage("../thu-p5/index.html");
     return; 
   }
 
