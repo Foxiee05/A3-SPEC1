@@ -33,6 +33,9 @@ let interactiveKaraokeObject;
 
 let cansClearedSoundTriggered = false;
 
+//ROTATION IMAGE FOR MOBILE DEVICES INIT-----------------------------------
+let rotateImg;
+
 //------instruction button
 let objects = [];
 
@@ -86,6 +89,8 @@ let canHeight = buildArray(50, (i) => randomInteger(90, 200));
 //---------------PRELOAD ------------------------------
 //------------------------------------------------------------
 function preload() {
+    rotateImg = loadImage('assets/device-rotate.png');
+
   //preload sounds
 soundFormats('wav');
 
@@ -326,6 +331,24 @@ interactiveKaraokeObject = new InteractiveKaraoke(karaokeImg1, karaokeImg2);
 //---------------DRAW ------------------------------
 //------------------------------------------------------------
 function draw() { 
+
+  //ROTATION DETECTION FOR MOBILE DEVICES----------------------------------------------------------------
+  if (windowWidth < windowHeight) {
+    background(0); // Black background for the warning
+    
+    // Draw the rotation image in the center
+    imageMode(CENTER);
+    
+    // We scale the image to fit the 1080p canvas coordinates
+    // regardless of the phone's actual resolution
+    image(rotateImg, 1920 / 2, 1080 / 2);
+    
+    // Stop the rest of the draw function from running
+    return; 
+  }
+
+
+  
 
    //INTRO NAME SEQUENCE---------------------------------------------------------
   if (introState !== "FINISHED") {

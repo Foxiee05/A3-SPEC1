@@ -1,5 +1,8 @@
 let mainCanvas;
 
+//ROTATION IMAGE FOR MOBILE DEVICES INIT-----------------------------------
+let rotateImg;
+
 
 // BACKGROUND AND INTRO ASSETS
 let backgroundLayers = [];
@@ -245,6 +248,8 @@ let backgroundBacteriaMaxPopSpeed = 0.45;
 function preload() {
   soundFormats("wav");
 
+    rotateImg = loadImage('assets/device-rotate.png');
+
   backgroundLayers = [
     loadImage("assets/city3.png"),
     loadImage("assets/city2.png"),
@@ -469,6 +474,22 @@ function showInstructionAfterIntro() {
 }
 
 function draw() {
+    //ROTATION DETECTION FOR MOBILE DEVICES----------------------------------------------------------------
+  if (windowWidth < windowHeight) {
+    background(0); // Black background for the warning
+    
+    // Draw the rotation image in the center
+    imageMode(CENTER);
+    
+    // We scale the image to fit the 1080p canvas coordinates
+    // regardless of the phone's actual resolution
+    image(rotateImg, 1920 / 2, 1080 / 2);
+    
+    // Stop the rest of the draw function from running
+    return; 
+  }
+
+
   if (drawIntroNameSequence()) {
     return;
   }
