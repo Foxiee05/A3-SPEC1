@@ -1,0 +1,9 @@
+REMAINED WORKS:
+- press M to mute/unmute //////////////////////////////
+- add karaoke man + ineraction karaoke man////////////////////////
+- add shaking dog cat
+- add more noisy elements to quet rac activity//////////////
+- fix quet rac activity////////////////////////////////////
+- fix next button /////////////////////////////////////
+- add redirection to next button 
+- clean all the trashes+stop karaoke man => eased mode ///////////////////////////////

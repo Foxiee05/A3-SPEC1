@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <script src="https://cdn.jsdelivr.net/npm/p5@1.11.13/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.13/lib/addons/p5.sound.min.js"></script>
+
+
+    <script src="matter.min.js"></script>
+
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css" />
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/perspective.css" />
+
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+<!-- loader -->
+  <div id="loader">
+    <p id="loader-text">Loading...</p>
+  </div>
+
+
+<!-- mute/unmute button -->
+<div id="audio-toggle" class="muted">
+  <img id="audio-icon" src="web-assets/mute.svg" alt="Mute Icon">
+</div>
+
+
+<!-- navigation bar -->
+<nav> 
+  <a href="#home" class="nav-left">Home</a>
+  <a href="#about" class="nav-left">About</a>
+  <a href="#play" id="play-nav" class="nav-right">Play!</a>
+  <a href="#details" class="nav-right">Details</a>
+</nav>
+
+<div class="ticker-wrapper">
+    <div class="ticker-content" id="ticker">
+        <p class="ticker-text">
+            Caring for the Earth is not only a policy goal but also a human responsibility. SDG 15: Life on Land calls on us to protect forests, restore ecosystems, and halt biodiversity loss, yet this mission can only truly matter when we feel connected to the living world around us. As Naskar (2021) writes, “If we don't have a place for nature in our heart, how can we expect nature to have a place for us.” This quote reminds us that nature can only survive in our world when it first exists in our values, choices, and everyday spaces. Give ecosystems a place in your heart by making room for them in your everyday living space.
+        </p>
+        <p class="ticker-text" aria-hidden="true">
+            Caring for the Earth is not only a policy goal but also a human responsibility. SDG 15: Life on Land calls on us to protect forests, restore ecosystems, and halt biodiversity loss, yet this mission can only truly matter when we feel connected to the living world around us. As Naskar (2021) writes, “If we don't have a place for nature in our heart, how can we expect nature to have a place for us.” This quote reminds us that nature can only survive in our world when it first exists in our values, choices, and everyday spaces. Give ecosystems a place in your heart by making room for them in your everyday living space.
+        </p>
+    </div>
+</div>
+<img id="logo" src="web-assets/logo.png" alt="Logo">
+
+<!-- content of the page -->
+<main>
+  <section id="home">
+    <div id="landing-p5"></div>
+
+  </section>
+
+
+
+  <section id="about">
+    <div id="about-matter"></div>
+
+    <div id="stage-container">
+     <a class="stages" id="stage-1" data-aos="zoom-in-right" data-aos-duration="150" data-aos-offset="200" href="#play">
+       <p>Stage<br>1</p>
+     </a>
+
+     <a class="stages" id="stage-2" data-aos="zoom-in-right" data-aos-duration="150" data-aos-offset="300" href="#play-2">
+       <p>Stage<br>2</p>
+     </a>
+
+     <a class="stages" id="stage-3" data-aos="zoom-in-right" data-aos-duration="150" data-aos-offset="400"  href="#play-3">
+       <p>Stage<br>3</p>
+     </a>
+    </div>
+
+    
+    
+    <div id="stage-container-phone">
+     <a class="stages-phone" id="stage-1-phone" data-aos="zoom-in" data-aos-duration="150" data-aos-offset="200" href="#play">
+       <p>Stage<br>1</p>
+     </a>
+
+     <a class="stages-phone" id="stage-2-phone" data-aos="zoom-in" data-aos-duration="150" data-aos-offset="300" href="#play-2">
+       <p>Stage<br>2</p>
+     </a>
+
+     <a class="stages-phone" id="stage-3-phone" data-aos="zoom-in" data-aos-duration="150" data-aos-offset="400"  href="#play-3">
+       <p>Stage<br>3</p>
+     </a>
+    </div>
+
+    <div id="about-square" data-aos="flip-left" data-aos-duration="800">
+     <section id="about-text">
+       <h1 data-aos="fade-up">About</h1>
+       <h2 data-aos="fade-up">Big Idea</h2>
+       <p id="big-idea" data-aos="fade-up">Caring for the Earth is not only a policy goal but also a human responsibility. SDG 15: Life on Land calls on us to protect forests, restore ecosystems, and halt biodiversity loss, yet this mission can only truly matter when we feel connected to the living world around us. As Naskar (2021) writes, “If we don't have a place for nature in our heart, how can we expect nature to have a place for us.” This quote reminds us that nature can only survive in our world when it first exists in our values, choices, and everyday spaces. Give ecosystems a place in your heart by making room for them in your everyday living space.</p>
+
+       <h2 data-aos="fade-up">Project Settings</h2>
+       <p id="project-settings-p1" data-aos="fade-up">Urbanization is one of the reasons for terrestrial ecosystem downgrading (Barry 2014). We cant avoid urbanization, but can avoid its destruction just by small actions in our daily life. And by fighting city development consequences, we are leaving more spaces for the ecosystem to cycle and be alive along with us.</p>
+       <p id="project-settings-p2" data-aos="fade-up">In this project, we will walk through a day of Nam - an average person living in HCMC, following him through his way to the park, to work and back to home. Each stage will explore how the current environmental problems of the city affect not just Nam, but also other living creatures around Nam, and some suggestions of how we can improve the problem!</p>
+    
+      </section>
+    </div>
+
+    <div id="about-sticky">
+      <img src="web-assets/about-sticky.png" alt="About sticky">
+    </div>
+
+    <div id="about-sticky-phone">
+      <img src="web-assets/about-sticky-phone.png" alt="About sticky">
+    </div>
+
+    <div id="bald-container">
+      <img id="bald" src="web-assets/bald-1.png" alt="bald">
+    </div>
+  </section>
+
+
+
+  <section id="play" class="play-section">
+
+    <div class="video-background">
+     <video autoplay muted loop playsinline id="bg-video">
+       <source src="web-assets/video-stage-1.webm" type="video/webm">
+     </video>
+    </div>
+
+    <div class="stage-textbox" id="stage-textbox-1" data-aos="flip-left" data-aos-duration="800">
+    <h1 data-aos="fade-up">Stage 1</h1>
+    <h2 data-aos="fade-up" data-aos-offset="200">Morning park walk</h2>
+    <p class="stage-textbox-content" data-aos="fade-up" data-aos-offset="400">Early in the morning, the first thing Nam is greeted with is a flood of irritating noises from outside: car horns, construction work nearby, and even his neighbor singing karaoke in the middle of the day. Not only Nam is the victim, but also the dogs and cats around.<br><br>This stage shows how noise can stress out both people and animals. From that, we encourage people to become more aware of their own noise-making activities for a better environment for not just us, but also for dear animals around us.</p>
+    <a class="stage-textbox-button" id="stage-textbox-button-1" data-aos="flip-up" data-aos-duration="500" data-aos-offset="-5"  href="chik-p5/index.html" target="_blank">Play!</a>
+    </div>
+  </section>
+
+
+  <section id="scroller-1-2" class="scroller">
+    <img src="web-assets/scroller-1-2.png" alt="scroller-1-2">
+  </section>
+
+
+  <section id="play-2" class="play-section">
+
+    <div class="video-background">
+     <video autoplay muted loop playsinline id="bg-video">
+       <source src="web-assets/video-stage-2.webm" type="video/webm">
+     </video>
+    </div>
+
+    <div class="stage-textbox" id="stage-textbox-2" data-aos="flip-left" data-aos-duration="800">
+    <h1 data-aos="fade-up">Stage 2</h1>
+    <h2 data-aos="fade-up" data-aos-offset="200">Go to work</h2>
+    <p class="stage-textbox-content" data-aos="fade-up" data-aos-offset="400">Then, while going to work, Nam is surrounded by fuel vehicles releasing thick smoke and intense heat onto the streets. The polluted air makes the environment uncomfortable and difficult to breathe in, affecting not only nature but also human health every day.<br><br>This stage shows how fuel vehicles contribute to air pollution, global warming, and health problems. From that, we encourage people to switch to electric vehicles in order to reduce emissions, protect the environment, and create a healthier future for everyone.</p>
+    <a class="stage-textbox-button" id="stage-textbox-button-2" data-aos="flip-up" data-aos-duration="500" data-aos-offset="-5"  href="thu-p5/index.html" target="_blank">Play!</a>
+    </div>
+  </section>
+
+  
+  <section id="scroller-2-3" class="scroller">
+    <img src="web-assets/scroller-2-3.png" alt="scroller-2-3">
+  </section>
+
+
+  <section id="play-3" class="play-section">
+
+    <div class="video-background">
+     <video autoplay muted loop playsinline id="bg-video">
+       <source src="web-assets/video-stage-3.webm" type="video/webm">
+     </video>
+    </div>
+
+    <div class="stage-textbox" id="stage-textbox-3" data-aos="flip-left" data-aos-duration="800">
+    <h1 data-aos="fade-up">Stage 3</h1>
+    <h2 data-aos="fade-up" data-aos-offset="200">Go back home</h2>
+    <p class="stage-textbox-content" data-aos="fade-up" data-aos-offset="400">It is finally time for Nam to head home, but the road leads to his home located next to the canal, which often floods in the late afternoon.<br><br>This stage shows how canal flooding, made worse by littering, can harm people and other living creatures on land. We want to encourage everyone to rethink about careless habits like littering into the canal. Careless thoughts are not harmless as they can turn into real actions that hurt both land life and people's own living conditions.</p>
+    <a class="stage-textbox-button" id="stage-textbox-button-3" data-aos="flip-up" data-aos-duration="500" data-aos-offset="-5" href="ceo-p5/index.html" target="_blank">Play!</a>
+    </div>
+  </section>
+
+
+
+  <section id="details">
+    <!-- preload bg imgs -->
+    <div style="display:none;">
+      <img src="web-assets/credit-bg-1.png">
+      <img src="web-assets/credit-bg-2.png">
+      <img src="web-assets/credit-bg-3.png">
+    </div>
+
+    <div id="details-text">
+     <h1 data-aos="fade-up">Credit</h1>
+     <p data-aos="fade-up" data-aos-offset="200">Nguyen Ho Thai Anh - s4052244<br>Nguyen Ngoc Tam - s3980446<br>Ha Ngoc Minh Thu - s3980635<br>----------------------------<br>Supervisor: Renick Bell<br>----------------------------<br>COMM2754<br>RMIT School of Design and Communication</p>
+    </div>
+
+    <a id="how">How did we do this?</a>
+  </section>
+
+</main>
+
+
+<!-- tippy js -->
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+<script src="script-tippy.js"></script>
+
+
+<script type="module" src="script.js"></script>
+<script src="sound.js"></script>
+<script src="functions.js"></script>
+<script src="classes.js"></script>
+<script src="sketch.js"></script>
+<script src="script-matter.js"></script>
+
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+      duration: 1000,
+    });
+</script>
+
+
+<script>
+      //loader disappear after page is loaded
+      //I dont actually know much about vanilla JS, so I followed this short on-hand tutorial about 'load' event listener
+      //Kalman Web Design (9 April 2024) ‘Dynamic Pages with JavaScript Load Event in 1 Minute!’ [video], Kalman Web Design, YouTube website, accessed 23 March 2026. https://www.youtube.com/watch?v=_MzBOV4q7p0
+      window.addEventListener('load', function() {
+        const loader = document.getElementById('loader');
+        loader.style.display = 'none';
+      });
+</script>
+</body>
+
+
+</html>

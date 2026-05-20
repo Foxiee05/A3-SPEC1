@@ -1,0 +1,1073 @@
+/*
+********************************************
+******************INIT*********************
+********************************************
+*/
+
+@font-face {
+  font-family: 'myUglyHandwriting';
+  src: url('MyUglyHandwriting-Regular.otf') format('opentype');
+}/*Kandou H (2021) My Ugly Handwriting, Dafont website, accessed 23 May 2026. https://www.dafont.com/my-ugly-handwriting.font?fbclid=IwY2xjawRKAPFleHRuA2FlbQIxMABicmlkETFwU2hLTTBEMlV6VHF0cEVJc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHhnoekgZm9FjqFunu5ms_WSzcVp7MKy_OUNjFJpQygacsdzgp5wIoFHFnZmF_aem_zAysNGaBHR1fsVwe9zrP6g*/
+
+@font-face {
+  font-family:'handwriting';
+  src: url('Handwriting.otf') format('opentype');
+}/*Paz J (2014) Handwriting, Dafont website, accessed 23 May 2026. https://www.dafont.com/handwriting-3.font?fbclid=IwY2xjawRXECZleHRuA2FlbQIxMABicmlkETFVcUlWbWZ6cHBaS09zOW8zc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHv4jBxQ6cH1X_LgkK9xIx5ffY4KrgXRlY0qLXUs19lP7krSn-_YWZgKduOjb_aem_ZS8gVt8EMlTFb-MuIXMHfA*/
+
+:root {
+  --white: #f8f8f8;
+  --black: #232323;
+  --pink: #FE98DF;
+  --brown: #B95C04;
+  --yellow: #FFDB2E;
+  --skin: #FEED93;
+  --red: #E43812;
+  --green: #7ECF44;
+  --blue: #35A8FF;
+  --dark-blue: #0A0FA5;
+  --purple: #A63EDF;
+  --dark-purple: #98157B;
+  --dark-green: #263717;
+
+
+  --title-size: 12rem;
+  --subtitle-size: 6rem;
+  --content-size: 2rem;
+  --nav-size: 3rem;
+}
+
+
+
+
+/* --------------------LOADER----------------------- */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--green);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#loader-text {
+  font-family: 'myUglyHandwriting';
+  font-size: 8rem;
+  color: var(--black);
+}
+
+
+/*
+********************************************
+*****************INDEX*********************
+********************************************
+*/
+html{
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+main, body{
+  padding: 0;
+  margin: 0;
+
+}
+
+
+@media (max-width: 1920px){
+  :root{
+    --title-size: 10rem;
+    --subtitle-size: 4rem;
+    --content-size: 1.4rem;
+  }
+}
+
+
+@media (max-width: 900px) {
+  :root {
+    --title-size: 5rem;
+    --subtitle-size: 3rem;
+    --content-size: 1.2rem;
+    --nav-size: 2.5rem;
+  }
+}
+
+
+/* AUDIO TOGGLE -------------------------------------------------------- */
+#audio-toggle {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  width: fit-content;
+  height: fit-content;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 100; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+#audio-toggle img{
+  width: 5rem;
+  height:5rem;
+}
+
+#audio-toggle:hover {
+  transform: scale(1.1);
+}
+
+#audio-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+
+@media (max-width: 1024px) {
+  #audio-toggle {
+    top: auto;
+    right: auto;
+    bottom: 7%;
+    left: 20px;
+  }
+
+
+  @media (max-width: 900px) {
+  #audio-toggle {
+    left:1%;
+    bottom: 6%;
+    scale: 0.7;
+  }
+}
+}
+
+
+
+
+
+/* NAVIGATION BAR------------------------------------------------------ */
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 1.5rem; */
+  width: 40%;
+  justify-self: center;
+  z-index: 100;
+  position: fixed;
+  -webkit-user-select: none; /* Safari */
+  user-select: none; /*Chrome, Firefox, etc. */
+  pointer-events: none;
+}
+
+nav a{
+  text-decoration: none;
+  color: var(--black);
+  text-align: center;
+
+  font-size: var(--nav-size);
+  font-family: 'myUglyHandwriting', cursive;
+
+  width: 10rem;
+  height: 19rem;
+  border-radius: 10rem;
+  background-color: var(--pink);
+  outline: 0.1rem solid var(--black);
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 2rem;
+  /* translate: 0 -14rem; */
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  box-shadow: 0.3rem 0.2rem 0 var(--black);
+  pointer-events: auto;
+}
+
+#play-nav{
+  background-color: var(--red);
+  color: var(--yellow);
+}
+
+.nav-right{
+  translate: 15rem -14rem;
+}
+
+.nav-left{
+  translate: -15rem -14rem;
+}
+
+
+@media(max-width:900px){
+  nav {
+    width: 70%;
+  }
+
+
+  .nav-right{
+  translate: 0 -15rem;
+}
+
+  .nav-left{
+  translate: 0 -15rem;
+}
+}
+
+
+@media (max-width: 600px) {
+  nav {
+    width: 90%;
+    pointer-events: none;
+  }
+  
+  nav a {
+    width: 5rem;
+    height: 16rem;
+    translate: 0 -12rem; 
+    font-size: 2.5rem; 
+    padding-right: 0.25rem;
+    padding-left: 0.25rem;
+    pointer-events: auto;
+  }
+
+  .nav-right{
+  translate: 0 -12rem;
+}
+
+  .nav-left{
+  translate: 0 -12rem;
+}
+}
+
+
+
+/* TICKER WRAPPER------------------------------------------------------ */
+.ticker-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden; 
+    background: var(--brown);
+    color: var(--skin);
+    padding: 1rem 0;
+    white-space: nowrap; 
+    border-top: 0.1rem solid var(--black);
+    z-index: 100;
+}
+
+.ticker-content {
+    display: flex;
+    width: max-content; 
+}
+
+.ticker-text {
+    padding-right: 4rem;
+    font-size: var(--content-size);
+    font-family: 'handwriting', cursive;
+    margin: 0;
+}
+
+@media (max-width: 900px){
+  .ticker-wrapper{
+    padding: 0.5rem 0;
+  }
+}
+
+
+
+/* LANDING PAGE------------------------------------------------------ */
+#home{
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  /* background-color: var(--green); */
+  margin: 0;
+}
+
+#landing-p5{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: auto;
+}
+
+#landing-p5 canvas{
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+
+#logo{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  height: auto;
+  z-index: 99;
+  margin: 0;
+  padding: 0;
+
+  will-change: transform, top, left;
+  pointer-events: none;
+}
+
+
+@media (max-width: 600px) {
+  #logo {
+    width: 80vw;
+  }
+}
+
+
+
+
+/* ABOUT PAGE------------------------------------------------------ */
+#about{
+  position: relative;
+  height: 200vh;
+  width: 100vw;
+  margin: 0;
+  padding: 10% 0;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: center;
+  /* background-color: var(--blue); */
+}
+
+#about-text h1{
+  font-size: var(--title-size);
+  font-family: 'myUglyHandwriting', cursive;
+  color: var(--red);
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+#about-text h2{
+  font-size: var(--subtitle-size);
+  font-family: 'myUglyHandwriting', cursive;
+  color: var(--blue);
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+#about-text p{
+  font-size: var(--content-size);
+  font-family: 'handwriting', monospace;
+  color: var(--black);
+}
+
+#big-idea{
+  margin-bottom: 20%;
+}
+
+#project-settings-p1{
+  margin-bottom: 0;
+}
+#project-settings-p2{
+  margin-bottom: 20%;
+}
+
+#about-text{
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 35vw;
+  height: auto;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+
+#about-square{
+  position: absolute;
+  /* left: 50%; */
+  /* transform: translate(-50%, 0); */
+  width: 50vw;
+  height: auto;
+  background-color: var(--white);
+  border-radius: 10rem;
+  outline: 0.1rem solid var(--black);
+  z-index: 2;
+  padding-bottom: 10%;
+}
+
+
+
+/* ------------  STICKY PARK -------------- */
+
+#about-sticky {
+  position: sticky; 
+  bottom: var(--content-size);
+  z-index: 5;
+  
+  width: 100%;
+  height: content-fit; 
+  pointer-events: none;
+  
+  /* margin-top: -10vh;  */
+  align-self: flex-end;
+  /* translate: 0 20%; */
+  user-select: none;
+}
+#about-sticky-phone{
+  display:none;
+}
+
+#about-sticky img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+  display: block;
+  pointer-events: none;
+}
+
+
+/* ------------  BACKGROUND MATTER JS -------------- */
+#about-matter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: auto;
+}
+
+#about-matter canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: auto;
+}
+
+
+/* ------------  BALD MAN -------------- */
+
+#bald-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30%;
+  height: 200vh;
+  z-index: 6;
+  margin-bottom: -20vh;
+  pointer-events: auto; 
+  align-self: flex-end;
+  user-select: none;
+}
+
+
+#bald {
+  position: sticky;
+  top: 55%;
+  left: -10vw;
+  transform: translate(0,-45%);
+  width: 35rem;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  will-change: transform, top, left;
+  object-position: bottom;
+  pointer-events: auto; 
+}
+
+.tippy-box[data-theme~='tippy-hover']{
+  font-family:'handwriting';
+  font-size: var(--content-size);
+  
+  background-color: var(--white);
+  color: var(--black);
+  padding: 0.5rem;
+  border-radius: 2rem;
+  outline: 0.1rem solid var(--black);
+}
+
+
+.tippy-arrow{
+  display:none;
+}
+
+
+
+
+/* --------------------- STAGE BUTTONS ------------------------ */
+#stage-container{
+  position: absolute;
+  width:fit-content;
+  height: 60%;
+  top:5%;
+  /* bottom:0; */
+  left: 60vw;
+  z-index:1;
+  pointer-events: none;
+}
+#stage-container-phone{
+  display:none;
+}
+
+.stages{
+  position: sticky;
+  display: flex;
+  font-family: 'myUglyHandwriting';
+  font-size: 4rem;
+  justify-content: flex-end;
+
+  height: fit-content;
+  width:30vw;
+  /* left: 60vw; */
+  border-radius: 173px;
+  outline: 0.1rem solid var(--black);
+  margin-top: 25%;
+  text-decoration: none;
+
+  transition: background-image 0.3s ease-in-out;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+.stages:hover{
+  cursor: pointer;
+}
+
+.stages p{
+  margin-right:3rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.stages:hover p {
+  opacity: 0; 
+}
+
+
+#stage-1{
+  background-color: var(--green);
+  color: var(--black);
+  top:15%;
+}
+#stage-1:hover {
+  background-image: url('web-assets/stage-1-about.png');
+}
+
+
+#stage-2{
+  background-color: var(--red);
+  top:35%;
+  /* top: 15% */
+}
+#stage-2:hover {
+  background-image: url('web-assets/stage-2-about.png');
+}
+
+
+#stage-3{
+  background-color: var(--black);
+  top:55%;
+}
+#stage-3:hover {
+  background-image: url('web-assets/stage-3-about.png');
+}
+
+
+
+#stage-2 p, #stage-3 p{
+  color: var(--white)
+}
+
+
+
+/* ----------------- TABLET BREAKPOINT ------------------- */
+@media(max-width: 1920px){
+  #stage-container{
+    height: 70%;
+  }
+  
+  
+  .stages{
+    font-size:3rem;
+  }
+}
+
+
+
+@media (max-width: 1440px) {
+   #about{
+    height:230vh;
+  }
+
+  #bald-container {
+  height: 200vh;
+ }
+
+  #bald {
+  transform: translate(-20%,-38%);
+  }
+
+  #stage-container{
+    height:60%;
+  }
+
+}
+
+
+@media (max-width: 1024px) {
+   #about{
+    height:230vh;
+  }
+  
+  
+  #bald-container {
+  height: 200vh;
+ }
+
+  #bald {
+  transform: translate(-25%,-38%);
+  }
+
+
+  .stages{
+    font-size: 3rem;
+  }
+
+
+  #stage-container{
+    height:45%;
+  }
+}
+
+
+
+/* ----------------- PHONE BREAKPOINT ------------------- */
+@media (max-width: 900px) {
+  #about{
+    height:300vh;
+  }
+
+
+  #about-square{
+    width: 80vw;
+    padding-bottom: 20%;
+  }
+
+
+  #about-text{
+    width: 70%;
+  }
+
+
+  #about-sticky {
+    width:100%;
+    margin-top: -10vw;
+    translate: 0 10%;
+  }
+
+
+  #bald-container {
+  display: none;
+ }
+
+
+ /* ---------PHONE STAGE CONTAINER------------ */
+ #stage-container{
+  display:none;
+ }
+
+ #stage-container-phone{
+  position: absolute;
+  width:fit-content;
+  height: 90%;
+  top:5%;
+  /* bottom:0; */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index:1;
+  pointer-events: none;
+  display: block;
+ }
+
+
+ .stages-phone {
+  position: sticky;
+  display: flex;
+  font-family: 'myUglyHandwriting';
+  font-size: 2rem;
+  justify-content: center;
+
+  height: fit-content;
+  width: 50vw;
+  border-radius: 173px;
+  outline: 0.1rem solid var(--black);
+  margin-top: 25%;
+  text-decoration: none;
+
+  transition: background-image 0.3s ease-in-out;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+.stages-phone:hover {
+  cursor: pointer;
+}
+
+.stages-phone p {
+  margin-right: 0;
+  text-align: center;
+  text-decoration: none;
+}
+
+.stages-phone:hover p {
+  opacity: 0; 
+}
+
+#stage-1-phone {
+  background-color: var(--green);
+  color: var(--black);
+  top: 20%;
+}
+
+
+#stage-2-phone {
+  background-color: var(--red);
+  top: 40%;
+}
+
+
+
+#stage-3-phone {
+  background-color: var(--black);
+  top: 60%;
+}
+
+
+
+#stage-2-phone p, 
+#stage-3-phone p {
+  color: var(--white);
+}
+
+
+ 
+}
+
+
+@media (max-width: 600px) {
+  /* ------------PHONE STICKY PARK--------------- */
+ #about-sticky{
+  display:none;
+ }
+
+ #about-sticky-phone {
+  display:block;
+  position: sticky; 
+  bottom: var(--content-size);
+  z-index: 5;
+  
+  width: 100%;
+  height: content-fit; 
+  pointer-events: none;
+  
+  /* margin-top: -10vh;  */
+  align-self: flex-end;
+  /* translate: 0 20%; */
+  }
+
+  #about-sticky-phone img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    display: block;
+    pointer-events: none;
+  }
+ }
+
+
+
+
+
+/* PLAY SECTION---------------------------------------------------------------------- */
+.play-section{
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  padding: 0 0;
+  display: flex;
+  margin:0;
+}
+
+
+/* -------VIDEO BACKGROUND------- */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  overflow: hidden;
+  contain: strict;
+  margin:0;
+
+  /* display: none; */
+}
+
+#bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+  margin:0;
+
+}
+
+
+/* ----------TEXT BOX (apply to all 3 stages)---------- */
+.stage-textbox{
+  background-color: var(--white);
+  height: fit-content;
+  width:40%;
+  display: block;
+  position: relative;
+  margin: 3%;
+  margin-top: 5%;
+
+
+  padding: 3rem;
+  padding-bottom:10rem;
+  outline: 0.1rem solid var(--black);
+  border-radius: 6rem;
+}
+
+.stage-textbox h1, .stage-textbox h2{
+  font-family: 'myUglyHandwriting';
+  font-weight: normal;
+}
+
+.stage-textbox h1{
+  font-size: var(--title-size);
+  margin: 0;
+  margin-top: 2%;
+}
+
+#stage-textbox-1 h1{
+  color: var(--green)
+}
+
+.stage-textbox h2{
+  font-size: var(--subtitle-size);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+}
+
+.stage-textbox-content{
+  font-family: 'Handwriting';
+  font-size: var(--content-size);
+  margin-top:0;
+  margin-bottom: 3rem;
+}
+
+.stage-textbox-button{
+  font-family: 'myUglyHandwriting';
+  font-size: var(--subtitle-size);
+
+  background-color: var(--yellow);
+  width: fit-content;
+  padding: 1rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  border-radius: 5rem;
+  outline: 0.1rem solid var(--black);
+  transition: 0.03s ease-in-out;
+  display: block;
+  text-decoration: none;
+  color: var(--black);
+
+  -webkit-user-select: none; /* Safari */
+  user-select: none; /*Chrome, Firefox, etc. */
+}
+
+#stage-textbox-button-1:hover{
+  transform: scale(1.15);
+  background-color: var(--green);
+  cursor: pointer;
+}
+
+
+/* --------STAGE 2------- */
+#stage-textbox-2{
+ margin-left: auto; 
+  margin-right: 3%;
+}
+
+
+#stage-textbox-2 h1{
+  color: var(--blue);
+}
+
+#stage-textbox-button-2:hover{
+  transform: scale(1.15) !important;
+  background-color: var(--blue);
+  cursor: pointer;
+}
+
+/* --------STAGE 3------- */
+#stage-textbox-3 h1{
+  color: var(--red);
+}
+
+#stage-textbox-button-3:hover{
+  transform: scale(1.15);
+  background-color: var(--red);
+  cursor: pointer;
+}
+
+
+
+@media (max-width: 1920px){
+  .stage-textbox{
+    /* width:50%; */
+    margin-bottom: 0;
+    margin-top: 2%;
+    padding-bottom:3rem;
+  }
+
+  .stage-textbox-button{
+    padding: 0.5rem;
+    padding-left: 5rem;
+  padding-right: 5rem;
+  }
+}
+
+
+@media(max-width:600px){
+  .stage-textbox{
+    width: 90%;
+    padding: 1rem;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #stage-textbox-2{
+  margin-left: 3%; 
+  margin-right: 3%;
+}
+}
+
+
+
+
+/* SCROLLER MIDWAY-------------------------------------------------------------- */
+.scroller{
+  width:100vw;
+  margin:0;
+  padding:0;
+
+}
+
+.scroller img{
+  width:100%;
+  margin:0;
+  display: block;
+}
+
+
+
+
+/* DETAILS---------------------------------------------------------------------------------- */
+#details {
+  height: 100vh;
+  width: 100vw;
+  position: relative; 
+
+  display: flex;
+  flex-direction: column;  
+  /* justify-content: center;   */
+  align-items: center;
+  
+  background-size: cover;
+  background-position: center;
+  background-image: url('web-assets/credit-bg-1.png');
+}
+
+#details-text{
+  width:50vw;
+  height: fit-content;
+  text-align: center;
+  margin-top: 10%;
+}
+
+#details-text h1{
+  font-family: 'myUglyHandwriting';
+  font-weight: normal;
+  font-size: var(--title-size);
+  margin:0;
+}
+
+#details-text p{
+  font-family: 'Handwriting';
+  font-size: var(--content-size);
+  margin:0;
+}
+
+#how{
+  height:fit-content;
+  background-color: var(--pink);
+
+  font-family: 'myUglyHandwriting';
+  font-size:var(--subtitle-size);
+
+  padding:1rem;
+  padding-right:5rem;
+  padding-left:5rem;
+  border-radius: 5rem;
+  outline: 0.12rem solid var(--black);
+  margin-top: auto; 
+  margin-bottom: 10vh;
+
+  user-select: none;
+  -webkit-user-select: none;
+
+  transition: 0.3s ease-in-out;
+}
+
+#how:hover{
+  transform: scale(1.1);
+  background-color: var(--yellow);
+  cursor: pointer;
+}
+
+@media(max-width:600px){
+  #how{
+  padding-right:3rem;
+  padding-left:3rem; 
+
+  font-size:2rem;
+
+  margin-bottom: 12vh;
+  }
+}
