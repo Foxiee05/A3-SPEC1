@@ -1048,6 +1048,8 @@ nav a{
   outline: 0.12rem solid var(--black);
   margin-top: auto; 
   margin-bottom: 10vh;
+  text-decoration: none;
+  color: var(--black);
 
   user-select: none;
   -webkit-user-select: none;
